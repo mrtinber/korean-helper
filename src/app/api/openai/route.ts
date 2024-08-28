@@ -1,10 +1,10 @@
-import OpenAi, { OpenAI } from "openai";
+import { OpenAI } from "openai";
 import { OpenAIStream, StreamingTextResponse, streamText } from 'ai';
 import { createOpenAI } from '@ai-sdk/openai';
 
 // Create an OpenAI API client
 const openai = new OpenAI({
-    apiKey: "",
+    apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY || "",
 });
 
 // Set to edge so it's faster

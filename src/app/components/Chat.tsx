@@ -1,7 +1,8 @@
-import { useChat } from "ai/react";
+'use client'
+
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { Message } from "ai/react"; // Assurez-vous que ce type existe
+import { Message, useChat } from "ai/react"; // Assurez-vous que ce type existe
 
 export const Chat = () => {
     const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -23,7 +24,7 @@ export const Chat = () => {
 
     const renderResponse = () => {
         return (
-            <>
+            <div className="h-48">
                 {messages.map((message, index) => (
                     <div
                         key={message.id}
@@ -36,8 +37,8 @@ export const Chat = () => {
                             alt="avatar"
                             src={
                                 message.role === "user"
-                                    ? "/user-avatar.jpg"
-                                    : "/ai-avatar.jpg"
+                                    ? "/vercel.svg"
+                                    : "/next.svg"
                             }
                             width={72}
                             height={72}
@@ -50,7 +51,7 @@ export const Chat = () => {
                         </div>
                     </div>
                 ))}
-            </>
+            </div>
         );
     };
 
@@ -61,7 +62,7 @@ export const Chat = () => {
                 <input
                     name="input-field"
                     type="text"
-                    placeholder="Say something in Korean"
+                    placeholder="Say something in Korean..."
                     onChange={handleInputChange}
                     value={input}
                 />

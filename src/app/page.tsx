@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image";
+import { Chat } from "./components/Chat";
 
 export default function Home() {
   return (
@@ -8,7 +11,7 @@ export default function Home() {
           <Image src="/next.svg" alt="" width={72} height={32} />
           <p>Korean Helper</p>
         </div>
-        {/* <Chat /> */}
+        <Chat />
       </div>
     </main>
   );
