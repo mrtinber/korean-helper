@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Message, useChat } from "ai/react"; // Assurez-vous que ce type existe
@@ -29,32 +31,32 @@ export const Chat = () => {
     };
 
     return (
-        <div className="absolute bottom-1 left-0 right-0 flex items-center justify-center">
+        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center">
             <pre>{msgInKorean}</pre>
 
             <form
                 id="generate-form"
-                className="max-w-md bg-gray-300 p-2 w-full rounded shadow-md"
+                className="w-full bg-gray-300 p-4 shadow-md flex justify-center"
                 onSubmit={handleSubmit}
             >
                 <ul
                     id="messages"
                     className="flex flex-col gap-1 text-xs max-h-[150px] overflow-auto"
                 ></ul>
-                <fieldset className="flex items-center w-full gap-2">
+                <fieldset className="flex items-center max-w-md w-full gap-2">
                     <input
                         type="text"
                         id="prompt"
                         name="prompt"
                         className="bg-gray-50 border border-gray-300 disabled:bg-gray-500 disabled:cursor-not-allowed text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        placeholder="A beautiful landing page"
+                        placeholder="Say something to our assistant..."
                         required
                     ></input>
                     <button
                         type="submit"
-                        className="text-white bg-blue-700 disabled:bg-gray-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5"
+                        className="text-white bg-[#0245A2] disabled:bg-gray-500 hover:bg-[#CC2E38] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all"
                     >
-                        Generate
+                        Send
                     </button>
                 </fieldset>
             </form>

@@ -1,16 +1,14 @@
 "use client"
 
 import Image from "next/image";
-import { Chat } from "./components/Chat";
+import { Chat } from "./_components/Chat";
+import { Header } from "./_components/Header";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-12">
       <div className="container">
-        <div className="header">
-          <Image src="/next.svg" alt="" width={72} height={32} />
-          <p>Korean Helper</p>
-        </div>
+        <Header />
         <Chat />
       </div>
     </main>
