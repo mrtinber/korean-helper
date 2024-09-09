@@ -31,8 +31,12 @@ export const Chat = () => {
     };
 
     return (
-        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center">
-            <pre>{msgInKorean}</pre>
+        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-center gap-4">
+            {msgInKorean && (
+                <p className="w-3/4 bg-slate-500 p-2 rounded-md text-white text-justify">
+                    {msgInKorean}
+                </p>
+            )}
 
             <form
                 id="generate-form"
@@ -82,41 +86,41 @@ export const Chat = () => {
 
 //     const renderResponse = () => {
 //         return (
-//             <div classNameName="h-48">
+//             <div className="h-48 w-full">
 //                 {messages.map((message, index) => (
-// <div
-//     key={message.id}
-//     classNameName={`chat-line ${
-//         message.role === "user" ? "user-chat" : "ai-chat"
-//     }`}
-// >
-//     <Image
-//         classNameName="avatar"
-//         alt="avatar"
-//         src={
-//             message.role === "user"
-//                 ? "/vercel.svg"
-//                 : "/next.svg"
-//         }
-//         width={72}
-//         height={72}
-//     />
-//     <div style={{ width: "100%", marginLeft: "16px" }}>
-//         <p classNameName="message">{message.content}</p>
-//         {index < messages.length - 1 && (
-//             <div classNameName="horizontal-line" />
-//         )}
-//     </div>
-// </div>
+//                     <div
+//                         key={message.id}
+//                         className={`chat-line ${
+//                             message.role === "user" ? "user-chat" : "ai-chat"
+//                         }`}
+//                     >
+//                         <Image
+//                             className="avatar"
+//                             alt="avatar"
+//                             src={
+//                                 message.role === "user"
+//                                     ? "/vercel.svg"
+//                                     : "/next.svg"
+//                             }
+//                             width={72}
+//                             height={72}
+//                         />
+//                         <div style={{ width: "100%", marginLeft: "16px" }}>
+//                             <p className="message">{message.content}</p>
+//                             {index < messages.length - 1 && (
+//                                 <div className="horizontal-line" />
+//                             )}
+//                         </div>
+//                     </div>
 //                 ))}
 //             </div>
 //         );
 //     };
 
 //     return (
-//         <div ref={chatContainer} classNameName="chat">
+//         <div ref={chatContainer} className="chat">
 //             {renderResponse()}
-//             <form onSubmit={handleSubmit} classNameName="mainForm">
+//             <form onSubmit={handleSubmit} className="mainForm">
 //                 <input
 //                     name="input-field"
 //                     type="text"
@@ -124,7 +128,10 @@ export const Chat = () => {
 //                     onChange={handleInputChange}
 //                     value={input}
 //                 />
-//                 <button type="submit" classNameName="mainButton w-4 bg-black h-4 rounded-full"></button>
+//                 <button
+//                     type="submit"
+//                     className="mainButton w-4 bg-black h-4 rounded-full"
+//                 ></button>
 //             </form>
 //         </div>
 //     );
@@ -135,20 +142,20 @@ export const Chat = () => {
 //     const formRef = useRef<HTMLFormElement>(null);
 
 //     return (
-//         <main classNameName="">
-//             <div classNameName="container">
-//                 <div classNameName="">
+//         <main className="">
+//             <div className="container">
+//                 <div className="">
 //                     {messages.map((message, index) => (
 //                         <div
 //                             key={message.id}
-//                             classNameName={`chat-line ${
+//                             className={`chat-line ${
 //                                 message.role === "user"
 //                                     ? "user-chat"
 //                                     : "ai-chat"
 //                             }`}
 //                         >
 //                             <Image
-//                                 classNameName="avatar"
+//                                 className="avatar"
 //                                 alt="avatar"
 //                                 src={
 //                                     message.role === "user"
@@ -159,9 +166,9 @@ export const Chat = () => {
 //                                 height={72}
 //                             />
 //                             <div style={{ width: "100%", marginLeft: "16px" }}>
-//                                 <p classNameName="message">{message.content}</p>
+//                                 <p className="message">{message.content}</p>
 //                                 {index < messages.length - 1 && (
-//                                     <div classNameName="horizontal-line" />
+//                                     <div className="horizontal-line" />
 //                                 )}
 //                             </div>
 //                         </div>
@@ -170,10 +177,10 @@ export const Chat = () => {
 //                 <form
 //                     ref={formRef}
 //                     onSubmit={handleSubmit}
-//                     classNameName=""
+//                     className=""
 //                 >
 //                     <input
-//                         classNameName="w-full text-lg"
+//                         className="w-full text-lg"
 //                         placeholder="Say something"
 //                         value={input}
 //                         onChange={handleInputChange}
@@ -181,7 +188,7 @@ export const Chat = () => {
 //                     <button
 //                         type="submit"
 //                         disabled={!input}
-//                         classNameName="absolute top-1/2 transform -translate-y-1/2 right-4 rounded-full"
+//                         className="absolute top-1/2 transform -translate-y-1/2 right-4 rounded-full"
 //                     ></button>
 //                 </form>
 //             </div>
